@@ -9,30 +9,30 @@
 			margin: 0;
 			padding: 0;
 		}
-		.boss {
-			overflow: hidden;
-			height: 100%;
-		}
 		.top {
+			box-sizing: border-box;
 			width: 100%;
 			height: 100px;
-			background-color: green;
-			border: 2px solid #000;
-			/*overflow: hidden;*/
+			background-color: #11CBD7;
+			border-bottom: 2px solid #000;
 		}
 		.left {
 			width: 220px;
-			margin-top: -2px;
-			height: 100%;
-						background-color: yellow;
-			border: 2px solid #000;
+			height: calc(100% - 100px);
+			background-color: #C6F1E7;
+			border-right: 2px solid #000;
+		}
+		main {
+			margin-left: 222px;
+			background-color: #FA4659;
+			height:calc(100% - 100px);
+			margin-top: calc(-100vh + 100px);
 		}
 	</style>
 </head>
 <body>
-	<div class="boss">
 	<div class="top"></div>
 	<div class="left"></div>
-	</div>
+	<main></main>
 </body>
 </html>
