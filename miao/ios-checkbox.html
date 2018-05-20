@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="checkbox"] {
+           display: none;
+        }
+        label {
+            display: inline-block;
+            width: 146px;
+            height: 86px;
+            background-color: #DDDDDD;
+            border-radius: 43px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .button {
+            width: 74px;
+            height: 74px;
+            background-color: #fff;
+            position: absolute;
+            left: 8px;
+            top: 6px;
+            border-radius: 37px;
+            transition: left .5s linear;
+        }
+        input:checked + label .button{
+            position: absolute;
+            left: 64px;
+
+        }
+
+        .bgcolor {
+            width: 0;
+            height: 86px;
+            background-color: #fff;
+            transition:width .5s linear,height .5s linear,background-color .5s linear;
+
+        }
+        input:checked + label .bgcolor {
+            border-radius: 43px;
+            width: 146px;
+            height: 86px;
+            background-color: #6EDC60;
+        }
+    </style>
+</head>
+<body>
+
+<input type="checkbox" id="checkbox">
+<label for="checkbox">
+    <div class="button"></div>
+    <div class="bgcolor"></div>
+</label>
+
+</body>
+</html>
