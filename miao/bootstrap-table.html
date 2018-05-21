@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+     body {
+    font-size: 16px;
+  }
+  /*宽度自动调整*/
+  .first-work {
+    width: 600px;
+    height: 38px;
+    table-layout: auto;
+    background-color: rgb(233,236,239);
+    border-collapse: collapse;
+    margin: 30px auto;
+  }
+  .head {
+    width: 40px;
+    height: 38px;
+    text-align: center;
+    padding: 0 5px;
+    border: 1px solid rgb(206,212,218);
+
+  }
+  .last {
+    width: 540px;
+    height: 38px;
+    border: 1px solid rgb(206,212,218);
+  }
+  .table-auto {
+    width: 99%;
+    height: 38px;   
+  }
+  .input-auto {
+    width: 99%;
+    height: 38px;   
+  }
+   /*宽度自动调整*/
+
+    /*.table结构*/
+  .table {
+      /*border-bottom: 1px solid #dee2e6;*/
+      width: 781px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      text-align: left;
+      border-spacing: 2px;
+  }
+  .table thead th {
+    border-bottom: 2px solid #dee2e6;
+    padding: 20px;
+  }
+  .table tr th, .table td {
+
+      padding: .75rem;
+  }
+  /*.table结构 */
+  /*table-striped*/
+  .table-striped tbody tr:nth-child(2n+1) {
+      background-color: rgb(242,242,242);
+  }
+  /*table-bordered*/
+  .table-bordered th,.table-bordered td {
+    border: 1px solid #dee2e6
+  }
+  /*table-hover*/
+  .table-hover tbody tr:hover {
+    background-color: rgb(236,236,236);
+  }
+  /*table-responsive*/
+  .table-responsive {
+      margin: 30px auto;
+      width: 781px;
+    overflow-x: scroll;
+  }
+  .table-responsive table {
+    width: auto;
+  }
+  </style>
+</head>
+<body>
+   <table class="first-work">
+      <tr>
+        <td class="head">@</td>
+        <td class="last">
+          <input type="text" class="table-auto" placeholder="Username">
+        </td>
+      </tr>
+  </table>
+  <table class="first-work">
+     <tr>
+      <td class="last">
+        <input type="text" class="input-auto" placeholder="Recipient's username">
+      </td>
+      <td class="head">@example.com</td>
+    </tr>
+  </table>
+
+
+  <!-- .table结构 -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+    </tbody>
+</table>
+  <!-- .table结构 -->
+  <!-- .table-striped -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+  <!-- .table-striped -->
+  <!-- table-bordered -->
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+  <!-- table-bordered -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<!-- table-responsive -->
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Heading</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+
+      
+    </tr>
+    <tr>
+      <th scope="row">Heading</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+  
+      
+    </tr>
+    <tr>
+      <th scope="row">Heading</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+
+    
+    </tr>
+  </tbody>
+  </table>
+</div>
+<!-- table-responsive -->
+</body>
+</html>
