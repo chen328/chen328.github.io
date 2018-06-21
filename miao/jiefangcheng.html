@@ -58,15 +58,17 @@
     var y 
     if (a1==0 || a2==0 || b1==0 || b2 ==0) {
         alert('该值不能为0')
-    }else {
-        if (b1 * a2 - b2 * a1 == 0) {
+    }else if((b1 * a2 - b2 * a1) == 0){
+        if ((c1 * a2 - c2 * a1) == 0) {
             console.log('方程有无穷个解')
         }else{
-            x = (b1 * c2 - b2 * c1)/(b1 * a2 - b2 * a1)
-            y = (c1 * a2 - c2 * a1)/(b1 * a2 - b2 * a1)
-            console.log('x='+x+','+'y='+y)
+            console.log('方程无解')
         }
 
+    }else{ 
+     x = (b1 * c2 - b2 * c1)/(b1 * a2 - b2 * a1) 
+     y = (c1 * a2 - c2 * a1)/(b1 * a2 - b2 * a1) 
+     console.log('x='+x+','+'y='+y)
     }
 
 
