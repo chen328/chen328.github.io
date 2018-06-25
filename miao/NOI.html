@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script id="ch0103/01">
+    var a = parseInt(prompt('请输入整数a'))
+    var b = parseInt(prompt('请输入整数b'))
+    console.log(a + b)
+  </script>
+  <script id="ch0103/02">
+    var a = Number(prompt('请输入a值'));
+    var b = Number(prompt('请输入b值'));
+    var c = Number(prompt('请输入c值'));
+    console.log((a + b) * c);
+  </script>
+  <script id="ch0103/03">
+    var a = Number(prompt('请输入a值'));
+    var b = Number(prompt('请输入b值'));
+    var c = Number(prompt('请输入c值'));
+    console.log(Math.floor((a + b) / c));
+  </script>
+  <script id="ch0103/04">
+    var a = Number(prompt('请输入被除数'));
+    var b = Number(prompt('请输入除数'));
+    console.log(parseInt(a / b) + ' ' + (a % b));
+  </script>
+  <script id="ch0103/05">
+    var a = Number(prompt('请输入分子'));
+    var b = Number(prompt('请输入分母'));
+    var num = (a / b).toFixed(9);
+    console.log(num);
+  </script>
+  <script id="ch0103/06"></script>
+  <script id="ch0103/07"></script>
+  <script id="ch0103/08"></script>
+  <script id="ch0103/09"></script>
+  <script id="ch0103/10"></script>
+  <script id="ch0104/01">
+     var n = +prompt('请输入一个整数')
+      if (n > 0) {
+      console.log('positive')
+      }else if (n === 0) {
+      console.log('zero')
+      }else {
+      console.log('negative')
+      }
+  </script>
+  <script id="ch0104/02">
+    var n = +prompt('请输入一个数')
+    if (n > 0) {
+      n = n.toFixed(2)
+      console.log(n)
+    }else if (n === 0) {
+      console.log(n)
+    }else {
+      n = -n
+      n = n.toFixed(2)
+      console.log(n)
+    }
+  </script>
+  <script id="ch0104/03">
+    var n = +prompt('请输入一个数')
+    if (n % 2 === 0) {
+      console.log('even')
+    }else {
+      console.log('odd')
+    }
+  </script>
+  <script id="ch0104/04">
+     var n = prompt('请输入一个字符')
+      n = n.charCodeAt();
+      if (n % 2 === 0) {
+        console.log('NO')
+      }else {
+        console.log('YES')
+      }
+  </script>
+  <script id="ch0104/05">
+     var a = +prompt('请输入一个整数')
+      var b = +prompt('请输入一个整数')
+      if (a > b) {
+        console.log('>')
+      }else if (a < b){
+        console.log('<')
+      }else {
+        console.log('=')
+      }
+  </script>
+  <script id="ch0104/06">
+    var a = +prompt('请输入一个正整数')
+    if (a >= 10 && a <= 99) {
+      console.log('1')
+    }else {
+      console.log('0')
+    }
+  </script>
+  <script id="ch0104/07">
+    var a = +prompt('请输入幸运的数量')
+    var b = +prompt('请输入鼓励的数量')
+    if (a >= 10 || b >= 20) {
+      console.log('1')
+    }else {
+      console.log('0')
+    }
+  </script>
+  <script id="ch0104/08">
+    var a = +prompt('请输入一个整数')
+    if (a %3 === 0 && a % 5 === 0) {
+      console.log('YES')
+    }else {
+      console.log('NO')
+    }
+  </script>
+  <script id="ch0104/09">
+     var a = +prompt('请输入一个整数')
+    if(a % 3 === 0 && a % 5=== 0 && a% 7 === 0){
+      console.log("3 5 7")
+    }else if (a % 3 === 0 && a % 5 === 0){
+      console.log("3 5")
+    }else if (a % 3 === 0 && a % 7 === 0){
+      console.log("3 7")
+    }else if (a % 5 === 0 && a % 7 === 0){
+      console.log("5 7")
+    }else if (a % 3 === 0){
+      console.log("3")
+    }else if (a % 5 === 0){
+      console.log("5")
+    }else if (a % 7 === 0){
+      console.log("7")
+    }else {
+      console.log('n')
+    }
+  </script>
+  <script id="ch0104/20">
+     var a = +prompt('请输入语文成绩')
+      var b = +prompt('请输入数学成绩')
+      if ((a <60 && b <60)||(a >=60 && b >= 60)){
+        console.log('0')
+      }else {
+        console.log('1')
+      }
+  </script>
+  <script id="ch0105/01">
+    //01平均年龄
+    var per = +prompt('学生人数')
+    var sum = 0
+    var avgYear = 0 
+    for (var i = 0; i < per; i++) {
+      var year = +prompt('年龄要在15-25')
+        sum += year
+    }
+    avgYear = parseInt(sum / per * 100) / 100
+    if (sum % per === 0 ) {
+      console.log(avgYear + '.00')
+    } else {
+      console.log(avgYear)
+    }   
+  </script>
+  <script id="ch0105/02">
+    //02财务管理
+    var money = 0
+    var sum = 0
+    var avg = 0
+    for (var i = 1; i < 13; i++) {
+      sum += +prompt('输入第'+i+'月结余')
+    }
+    avg = parseInt(sum / 12 * 100) / 100
+    if (sum % 12 === 0 ) {
+      console.log(avg + '.00')
+    } else {
+      console.log(avg)
+    }  
+  </script>
+  <script id="ch0105/03">
+    // 03和前面一样
+     var num = +prompt('请输入有多少个数字')
+     var sum = 0
+     for(var i = 0; i < num; i++){
+       var mm = +prompt('请输入第'+(i+1)+'个数字')
+       sum = sum + mm
+     }
+     var avg = sum/num
+     avg=avg.toFixed(4)
+     console.log(avg)
+  </script>
+  <script id="ch0105/04">
+    //04一样
+    var num = +prompt('请输入有多少个数字')
+    var sum = 0
+    for(var i = 0; i < num; i++){
+      var mm = +prompt('请输入第'+(i+1)+'个数字')
+      sum = sum + mm
+    }
+    var avg = sum/num
+    avg=avg.toFixed(5)
+    console.log(sum+' '+avg)
+  </script>
+  <script id="ch0105/05">
+    //05最高的分数
+    var n = +prompt('输入整数人数')
+    var best = 0
+    for (var i = 0; i < n; i++) {
+      var score = +prompt('分数')
+      if (score > best) {
+        best = score
+      }
+    }
+    console.log(best) 
+  </script>
+  <script id="ch0105/06">
+    //06整数序列的元素最大跨度值
+    var n = +prompt('个数')
+    var max = 0
+    var min = 0
+    var num = +prompt('非负整数')
+    max = min = num
+    for (var i = 0; i < n - 1; i++) {
+      num = +prompt('非负整数')
+      if (num > max) {
+        max = num
+      } else if (num < min) {
+        min = num
+      }
+    }
+    console.log(max - min) 
+  </script>
+  <script id="ch0105/07">
+    //07:奥运奖牌计数
+    var day = +prompt('参与天数')
+    var au = 0
+    var ag = 0
+    var cu = 0
+    for (var i = 1; i < day+1; i++) {
+     au += +prompt('第'+i+'天获得的金牌')
+     ag += +prompt('第'+i+'天获得的银牌')
+     cu += +prompt('第'+i+'天获得的铜牌')
+    }
+    var sum = au + ag + cu
+    console.log(au + ' '  + ag + ' ' + cu + ' ' + sum)
+  </script>
+  <script id="ch0105/09">
+    //09奇数求和
+    var m = +prompt('小于300的非负整数m')
+    var n = +prompt('小于300的非负整数n')
+    var sum = 0
+    for (var i = m; i < n; i++) {
+      if (i % 2 === 0) {
+        continue;
+      } else {
+        sum += i
+      }
+    }
+    console.log(sum)
+  </script>
+  <script id="ch0105/010">
+    //10:满足条件的数累加
+    var m = +prompt('小于1000的非负整数m')
+    var n = +prompt('小于1000的非负整数n')
+    var sum = 0
+    for (var i = m; i < n; i++) {
+      if (i % 17 === 0) {
+        sum += i
+      } 
+    }
+    console.log(sum)
+  </script>
+</body>
+</html>
