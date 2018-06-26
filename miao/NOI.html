@@ -267,5 +267,82 @@
     }
     console.log(sum)
   </script>
+   <script id="sort" >
+    var a = +prompt('输入数字')
+    var b = +prompt('输入数字')
+    var c = +prompt('输入数字')
+    if (a > b) {
+      b = a + b
+      a = b - a
+      b = b - a
+    } 
+    if (a > c) {
+      c = a + c
+      a = c - a
+      c = c - a
+    }
+    if (b > c) {
+      c = b + c
+      b = c - b
+      c = c - b
+    }
+    console.log(a + ' ' + b + ' ' + c)   
+  </script>
+  <script id="narcissistic">
+    
+  </script>
+  <script id="palindrom" >
+    //回文数字
+    var num = +prompt('输入非负整数')
+    var str = String(num)
+    var a = 0
+    var b = str.length - 1 
+    var bool = true
+    while (a < b) {
+      if (str[a] === str[b]) {
+        a++
+        b--
+      }
+      else {
+        bool = false
+        break;
+      }
+    }
+    if (bool) {
+    console.log('YES')   
+    } else {
+      console.log('NO')
+    }
+  </script>
+  <script id="complete-number">
+    var num = +prompt('输入数字判断')
+    var sum = 0
+    for (var i = 1; i < num; i++) {
+      if (num % i === 0) {
+        sum += i
+      }
+    }
+    if (sum === num) {
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+  </script>
+  <script id="7"  >
+    for (var i = 0; i < 100; i++) {
+      if (i % 7 === 0) {
+        console.log(i)
+        continue;
+      }
+      if (i % 10 === 7) {
+        console.log(i)
+        continue;
+      }
+      if (parseInt(i / 10) === 7 ) {
+        console.log(i)
+        continue;
+      }
+    }
+  </script>
 </body>
 </html>
