@@ -27,7 +27,7 @@ var chen328 = {
 
     difference: function(array,...array2){
       let arr= [];
-      let temp = [...array2];
+      let temp = [].concat(...array2);
       //console.log(temp);
       for(let i=0; i<array.length; i++){
         if (temp.indexOf(array[i]) === -1) {
