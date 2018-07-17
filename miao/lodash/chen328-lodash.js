@@ -35,6 +35,66 @@ var chen328 = {
         }
       }
       return arr;
-    }
+    },
+     /**
+     *
+     * @param array(Array)
+     * @param n(number)
+     */
+    drop:(array,n=1) =>{
+        let arr = [];
+        for (let i=0;i<array.length; i++){
+            arr.push(array[i]);
+        }
+        if (n >= arr.length){return []}
+        for (let i=0; i<n; i++){
+            arr.shift();
+        }
+        return arr;
+    },
+    /**
+     *
+     * @param array(Array)
+     * @param n(number)
+     */
+    dropRight:(array,n=1) =>{
+        let arr = [];
+        for (let i=0;i<array.length; i++){
+            arr.push(array[i]);
+        }
+        if (n >= arr.length){return []}
+        for (let i=0; i<n; i++){
+            arr.pop();
+        }
+        return arr;
+    },
+
+    fill:(array,value,start=0,end=array.length) => {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            arr.push(array[i]);
+        }
+        for (let i=start;i<end; i++){
+            arr[i] = value;
+        }
+        return arr
+    },
+
+    slice:(array,...value) => {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            arr.push(array[i]);
+        }
+        for (let i = 0; i < value.length; i++) {
+            if (Array.isArray(value[i]) === true){
+                value[i].forEach(item =>{
+                    arr.push(item);
+                })
+            } else{
+                arr.push(value[i]);
+            }
+        }
+        return arr;
+    },
 
 };
