@@ -97,4 +97,16 @@ var chen328 = {
         return arr;
     },
 
+    flatten:(array) => {
+        let arr = [];
+        array.forEach(item => {
+            if (Array.isArray(item) === true){
+                arr = arr.concat(item);
+            } else {
+                arr.push(item);
+            }
+        });
+        return arr
+    },
+
 };
