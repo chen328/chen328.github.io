@@ -109,4 +109,20 @@ var chen328 = {
         return arr
     },
 
+    flattenDeep:(array) => {
+        let arr = [];
+        (function fn(array){
+            array.forEach(item => {
+                if (Array.isArray(item) === true){
+                    fn(item);
+                } else {
+                    arr.push(item);
+                }
+            });
+        }(array));
+
+        return arr
+    }
+
+    
 };
