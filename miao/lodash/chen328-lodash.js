@@ -259,7 +259,7 @@ var chen328 = {
             return 0
         }
         for (let i = 0; i < array.length; i++) {
-            if (value >= array[i] && value < array[i+1]){
+            if (value >= array[i] && value <= array[i+1]){
                 return i+1
             }
         }
