@@ -206,7 +206,83 @@ var chen328 = {
     last:(array) => {
       if (array.length === 0) {return undefined}
       return array[array.length -1];
+    },
+
+    lastIndexOf:(array,value,fromIndex=array.length-1) => {
+        for (let i = fromIndex; i >=0 ; i--) {
+            if(array[i] === value){
+                return i
+            }
+        }
+        return -1;
+    },
+
+    nth:(array,n=0) => {
+        if (n >= 0){
+            return array[n];
+        } else {
+            return array[array.length + n]
+        }
+    },
+
+    pull:(array,...value) => {
+       for (let i=0; i<value.length;i++){
+           while (array.indexOf(value[i]) !== -1){
+               let ind = array.indexOf(value[i]);
+               array.splice(ind,1);
+           }
+       }
+       return array
+    },
+
+    pullAll:(array,values) => {
+       for (let i=0; i<values.length;i++){
+           while (array.indexOf(values[i]) !== -1){
+               let ind = array.indexOf(values[i]);
+               array.splice(ind,1);
+           }
+       }
+       return array
+    },
+
+    reverse:(array) => {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            arr.unshift(array[i]);
+        }
+        array = arr;
+        return array
+    },
+
+    sortedIndex:(array,value) => {
+        if (value < array[0]){
+            return 0
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (value >= array[i] && value < array[i+1]){
+                return i+1
+            }
+        }
+    },
+
+    sortedLastIndex:(array,value) => {
+        if (value < array[0]){
+            return 0
+        }
+        if (value > array[array.length-1]){
+            return array.length -1
+        }
+        for (let i = array.length-1; i >= 1; i--) {
+            if (value >= array[i-1] && value < array[i]){
+                return i
+            }
+        }
+    },
+
+    sortedLastIndexOf:(array,value) => {
+        return array.lastIndexOf(value)
     }
+
 
 
 
