@@ -122,7 +122,94 @@ var chen328 = {
         }(array));
 
         return arr
+    },
+
+    flattenDepth:(array,depth=1) => {
+        let fn = function (array){
+            let arr = [];
+            array.forEach(item => {
+                if (Array.isArray(item) === true){
+                    arr = arr.concat(item);
+                } else {
+                    arr.push(item);
+                }
+            });
+            return arr ;
+        };
+        for (let i=0;i<depth;i++){
+            array = fn(array);
+        }
+        return array
+    },
+
+    fromPairs:(pairs) => {
+        let obj = {};
+        (function fn(array) {
+            array.forEach((item) => {
+                if (Array.isArray(item) === true) {
+                    fn(item);
+                } else {
+                    let str = ""+array[0]+"";
+                    obj[str] = array[1];
+                }
+            });
+        }(pairs));
+        return obj
+    },
+
+    head:array => {
+        return array[0];
+    },
+
+    indexOf:(array,value,fromIndex=0) => {
+        for (let i = fromIndex; i < array.length; i++) {
+            if(array[i] === value){
+               return i
+            }
+        }
+    },
+
+    initial:array => {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            arr.push(array[i]);
+        }
+        arr.pop();
+        return arr;
+    },
+
+    intersection:(...arrays) => {
+        let arr = [];
+        for (let i = 0; i < arrays[0].length; i++) {
+            let bool = true;
+            for ( let n=1; n<arrays.length; n++){
+                if (arrays[n].includes(arrays[0][i]) === false){
+                    bool = false;
+                    break;
+                }
+            }
+            if (bool){arr.push(arrays[0][i])};
+        }
+        return arr
+    },
+
+    join:(array,separator = ',') => {
+        let str = '';
+        str += ''+array[0]+'';
+        for (let i = 1; i < array.length; i++) {
+            str += separator;
+            str += ''+array[i]+'';
+        }
+        return str
+    },
+
+    last:(array) => {
+      if (array.length === 0) {return undefined}
+      return array[array.length -1];
     }
 
-    
+
+
+
+
 };
