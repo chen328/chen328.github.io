@@ -281,7 +281,23 @@ var chen328 = {
 
     sortedLastIndexOf:(array,value) => {
         return array.lastIndexOf(value)
-    }
+    },
+
+    sortedIndexOf:(array,value) => {
+      return array.indexOf(value)
+    },
+
+    uniq:(array) => {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            if (arr.includes(array[i]) === false){
+                arr.push(array[i]);
+            }
+        }
+        return arr
+    },
+
+    
 
 
 
