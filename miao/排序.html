@@ -1,0 +1,242 @@
+<script>
+function swap(ary, i, j) {
+  var tmp = ary[i]
+  ary[i] = ary[j]
+  ary[j] = tmp
+}
+
+bubbleSort([{age:1},{age:2},{age:3},{age:4}], function(a, b) {
+  return a.age - b.age
+})
+
+function bubbleSort(ary, comparator) {
+  var l = ary.length
+
+  for(var i = l - 2; i >= 1; i--) {
+    var swaped = false
+    for(var j = 0; j < i; j++) {
+      if (comparator(ary[j], ary[j + 1]) > 0) {
+        swap(ary, j, j + 1)
+        swaped = true
+      } else {
+
+      }
+    }
+    if (!swaped) {
+      return ary
+    }
+  }
+
+  return ary
+}
+
+function selectSort(ary) {
+  for(var i = 0; i < ary.length - 1; i++) {
+    var minIndex = i
+    for(var j = i; j < ary.length; j++) {
+      if (ary[j] < ary[minIndex]) {
+        minIndex = j
+      }
+    }
+    swap(ary, i, minIndex)
+  }
+  return ary
+}
+
+function insertSort(ary) {
+  for(var i = 1; i < ary.length; i++) {
+    for(var j = 0; j < i; j++) {
+      if (ary[i] <= ary[j]) {
+        var tmp = ary[i]
+        for(var k = i - 1; k >= j; k--) {
+          ary[k + 1] = ary[k]
+        }
+        ary[j] = tmp
+        break
+      }
+    }
+  }
+
+  return ary
+}
+
+function insertSort(ary) {
+  for(var i = 1; i < ary.length; i++) {
+    for(var j = 0; j < i; j++) {
+      if (ary[i] <= ary[j]) {
+        var index = j
+        break
+      }
+    }
+    var tmp = ary[i]
+    for(var k = i - 1; k >= j; k--) {
+      ary[k + 1] = ary[k]
+    }
+    ary[j] = tmp
+  }
+
+  return ary
+}
+
+
+function inOrderTraverse(root, action = console.log) {
+  if (root) {
+    inOrderTraverse(root.left, action)
+    action(root.val)
+    inOrderTraverse(root.right, action)
+  }
+}
+
+// 把val插入到排序树root中
+// 并返回（可能的）新的树根
+function insert(root, val) {
+  if (!root) {
+    return {
+      val: val,
+      left: null,
+      right: null
+    }
+  } else {
+    if (val < root.val) {
+      root.left = insert(root.left, val)
+    } else {
+      root.right = insert(root.right, val)
+    }
+    return root
+  }
+}
+
+function bstSort(ary) {
+  var root = null
+
+  for(var i = 0; i<ary.length; i++) {
+    root = insert(root, ary[i])
+  }
+
+  var i = 0
+
+  inOrderTraverse(root, val => {
+    ary[i++] = val
+  })
+
+  return ary
+}
+
+
+function randomRange(n) {
+  return new Array(n).fill(0).map(it => Math.random() * n | 0)
+}
+
+function quickSort(ary) {
+  if (ary.length <= 1) {
+    return ary.slice()
+  }
+
+  var pivot = ary[Math.floor(ary.length * Math.random())]
+  var left = []
+  var middle = []
+  var right = []
+
+  for(var item of ary) {
+    if (item < pivot) {
+      left.push(item)
+    } else if (item > pivot) {
+      right.push(item)
+    } else if (item === pivot) {
+      middle.push(item)
+    }
+  }
+
+  return quickSort(left).concat(middle, quickSort(right))
+}
+
+
+function qSort(ary) {
+  return partition(ary, 0, ary.length - 1)
+}
+function partition(ary, start = 0, end = ary.length - 1) {
+  if (start >= end) {
+    return
+  }
+  var pivotIndex = Math.floor((end - start + 1) * Math.random() + start)
+  var pivot = ary[pivotIndex]
+
+  swap(ary, pivotIndex, end)
+
+  for(var i = start - 1, j = start; j <= end; j++) {
+    if (ary[j] <= pivot) {
+      i++
+      swap(ary, i, j)
+    }
+  }
+
+  partition(ary, start, i - 1)
+  partition(ary, i + 1, end)
+
+  return ary
+}
+
+
+
+
+
+
+// function partition2(ary, start, end) {
+//   var pivotIndex = Math.floor((end - start + 1) * Math.random() + start)
+//   var pivot = ary[pivotIndex]
+
+//   var i = start
+//   var j = end
+
+//   while(i <= j) {
+//     while(ary[i] < pivot && i < j) {
+//       i++
+//     }
+//     while(ary[j] > pivot && i < j) {
+//       j--
+//     }
+//     swap(ary, i, j)
+//   }
+
+//   if () {
+//     swap(ary, i+1, j)
+//   }
+// }
+
+
+function mergeSort(ary) {
+  if (ary.length <= 1) {
+    return [...ary]
+  }
+  var mid = ary.length / 2 | 0
+  var left = mergeSort(ary.slice(0, mid))
+  var right = mergeSort(ary.slice(mid))
+
+  var result = new Array(ary.length)
+  var index = 0
+
+  var i = 0,j = 0
+  while(i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result[index++] = left[i++]
+    } else {
+      result[index++] = right[j++]
+    }
+  }
+
+  if (i === left.length) {
+    while(j < right.length) {
+      result[index++] = right[j++]
+    }
+  }
+
+  if (j === right.length) {
+    while(i < left.length) {
+      result[index++] = left[i++]
+    }
+  }
+
+  return result
+}
+
+</script>
